@@ -1,0 +1,26 @@
+{
+    "name": "vscode-xslt",
+    "displayName": "xslt",
+    "description": "Language support for XSLT and XPath",
+    "version": "0.0.1",
+    "publisher": "theimowski",
+    "engines": {
+        "vscode": "^1.10.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "xslt",
+            "aliases": ["xsl", "xslt"],
+            "extensions": ["xsl","xslt"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "xslt",
+            "scopeName": "source.xslt",
+            "path": "./syntaxes/xslt.tmLanguage.json"
+        }]
+    }
+}
