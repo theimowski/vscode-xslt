@@ -6,7 +6,6 @@
 		"xslt"
 	],
 	"patterns": [
-		
 		{
 			"begin": "(<)(xsl)((:))(variable)",
 			"captures": {
@@ -27,56 +26,28 @@
 				}
 			},
 			"end": "(>)",
-			"name": "meta.tag.xml.variable",
+			
+			"contentName": "meta.tag.xml.variable",
 			"patterns": [
-				
 				{
-					"include": "#asDeclaration"
-				},
-				{
-					"include": "#doublequotedString"
-				},
-				{
-					"include": "#singlequotedString"
+					"match": "(as)=\"([a-zA-Z:\\(\\)\\*\\?\\+]+)\"",
+					"captures": {
+						"1": {
+							"name": "entity.other.attribute-name.localname.xml"
+						},
+						"2": {
+							"name": "support.type"
+						}
+					}
 				}
 			]
 		},
-		
 		{
 			"include": "text.xml"
 		}
+		
 	],
 	"repository": {
-		"doublequotedString": {
-			"begin": "\"",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.string.begin.xml"
-				}
-			},
-			"end": "\"",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.string.end.xml"
-				}
-			},
-			"name": "string.quoted.double.xml"
-		},
-		"singlequotedString": {
-			"begin": "'",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.string.begin.xml"
-				}
-			},
-			"end": "'",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.string.end.xml"
-				}
-			},
-			"name": "string.quoted.single.xml"
-		},
 		"asDeclaration": {
 			"begin": "(as)=(\")",
 			"beginCaptures": {
