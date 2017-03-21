@@ -10,16 +10,13 @@
     "categories": [
         "Languages"
     ],
+    "extensionDependencies": [
+        "xml"
+    ],
     "contributes": {
-        "languages": [{
-            "id": "xslt",
-            "aliases": ["xsl", "xslt"],
-            "extensions": ["xsl","xslt"],
-            "configuration": "./language-configuration.json"
-        }],
         "grammars": [{
-            "language": "xslt",
-            "scopeName": "source.xslt",
+            "language": "xsl",
+            "scopeName": "text.xml.xsl",
             "path": "./syntaxes/xslt.tmLanguage.json"
         }]
     }

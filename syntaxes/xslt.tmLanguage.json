@@ -1,32 +1,100 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "xslt",
+	"scopeName": "text.xml.xsl",
+	"name": "XSL",
+	"fileTypes": [
+		"xsl",
+		"xslt"
+	],
 	"patterns": [
+		
 		{
-			"include": "#keywords"
+			"begin": "(<)(xsl)((:))(variable)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.namespace.xml"
+				},
+				"3": {
+					"name": "entity.name.tag.xml"
+				},
+				"4": {
+					"name": "punctuation.separator.namespace.xml"
+				},
+				"5": {
+					"name": "entity.name.tag.localname.xml"
+				}
+			},
+			"end": "(>)",
+			"name": "meta.tag.xml.variable",
+			"patterns": [
+				
+				{
+					"include": "#asDeclaration"
+				},
+				{
+					"include": "#doublequotedString"
+				},
+				{
+					"include": "#singlequotedString"
+				}
+			]
 		},
+		
 		{
-			"include": "#strings"
+			"include": "text.xml"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.xslt",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.xslt",
+		"doublequotedString": {
 			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.xslt",
-					"match": "\\\\."
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.xml"
 				}
-			]
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.xml"
+				}
+			},
+			"name": "string.quoted.double.xml"
+		},
+		"singlequotedString": {
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.xml"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.xml"
+				}
+			},
+			"name": "string.quoted.single.xml"
+		},
+		"asDeclaration": {
+			"begin": "(as)=(\")",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.other.attribute-name.localname.xml"
+				},
+				"2": {
+					"name": "string.quoted.single.xml"
+				}
+			},
+			"end": "(\")",
+			"endCaptures": {
+				"0": {
+					"name": "string.quoted.single.xml"
+				}
+			},
+			"contentName": "support.type"
 		}
 	},
-	"scopeName": "source.xslt"
+	"version": "https://github.com/atom/language-xml/commit/507de2ee7daca60cf02e9e21fbeb92bbae73e280"
 }
