@@ -30,13 +30,21 @@
 			"contentName": "meta.tag.xml.variable",
 			"patterns": [
 				{
-					"begin": "(as)=\"",
+					"begin": "(as)=(\")",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
+						},
+						"2": {
+							"name": "string.quoted.double.xml"
 						}
 					},
-					"end": "\"",
+					"end": "(\")",
+					"endCaptures": {
+						"1": {
+							"name": "string.quoted.double.xml"
+						}
+					},
 					"contentName": "support.type"
 				},
 				{
