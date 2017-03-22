@@ -30,15 +30,9 @@
 			"contentName": "meta.tag.xml.variable",
 			"patterns": [
 				{
-					"match": "(as)=\"([a-zA-Z:\\(\\)\\*\\?\\+]+)\"",
-					"captures": {
-						"1": {
-							"name": "entity.other.attribute-name.localname.xml"
-						},
-						"2": {
-							"name": "support.type"
-						}
-					}
+					"begin": "as=\"",
+					"end": "\"",
+					"contentName": "support.type"
 				}
 			]
 		},
