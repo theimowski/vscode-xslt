@@ -30,9 +30,37 @@
 			"contentName": "meta.tag.xml.variable",
 			"patterns": [
 				{
-					"begin": "as=\"",
+					"begin": "(as)=\"",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.other.attribute-name.localname.xml"
+						}
+					},
 					"end": "\"",
 					"contentName": "support.type"
+				},
+				{
+					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as)([a-zA-Z-]+)",
+					"captures": {
+						"1": {
+							"name": "entity.other.attribute-name.namespace.xml"
+						},
+						"2": {
+							"name": "entity.other.attribute-name.xml"
+						},
+						"3": {
+							"name": "punctuation.separator.namespace.xml"
+						},
+						"4": {
+							"name": "entity.other.attribute-name.localname.xml"
+						}
+					}
+				},
+				{
+					"include": "#doublequotedString"
+				},
+				{
+					"include": "#singlequotedString"
 				}
 			]
 		},
@@ -42,23 +70,35 @@
 		
 	],
 	"repository": {
-		"asDeclaration": {
-			"begin": "(as)=(\")",
+		"doublequotedString": {
+			"begin": "\"",
 			"beginCaptures": {
-				"1": {
-					"name": "entity.other.attribute-name.localname.xml"
-				},
-				"2": {
-					"name": "string.quoted.single.xml"
+				"0": {
+					"name": "punctuation.definition.string.begin.xml"
 				}
 			},
-			"end": "(\")",
+			"end": "\"",
 			"endCaptures": {
 				"0": {
-					"name": "string.quoted.single.xml"
+					"name": "punctuation.definition.string.end.xml"
 				}
 			},
-			"contentName": "support.type"
+			"name": "string.quoted.double.xml"
+		},
+		"singlequotedString": {
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.xml"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.xml"
+				}
+			},
+			"name": "string.quoted.single.xml"
 		}
 	},
 	"version": "https://github.com/atom/language-xml/commit/507de2ee7daca60cf02e9e21fbeb92bbae73e280"
