@@ -95,6 +95,71 @@
 			]
 		},
 		{
+			"begin": "(<)([\\w-]+)?((:))?([\\w-]+)",
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.tag.xml"
+				},
+				"2": {
+					"name": "entity.name.tag.namespace.xml"
+				},
+				"3": {
+					"name": "entity.name.tag.xml"
+				},
+				"4": {
+					"name": "punctuation.separator.namespace.xml"
+				},
+				"5": {
+					"name": "entity.name.tag.localname.xml"
+				}
+			},
+			"end": "(>)",
+			"contentName": "meta.tag.xml",
+			"patterns": [
+				{
+					"begin": "(\\w+)\\s*=(\"{)",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.other.attribute-name.localname.xml"
+						},
+						"2": {
+							"name": "string.quoted.double.xml"
+						}
+					},
+					"end": "(}\")",
+					"endCaptures": {
+						"1": {
+							"name": "string.quoted.double.xml"
+						}
+					},
+					"patterns": [{ "include": "source.xpath" }]
+				},
+				{
+					"match": " (?:([-_a-zA-Z0-9]+)((:)))?([a-zA-Z-]+)(?!=\"{)",
+					"captures": {
+						"1": {
+							"name": "entity.other.attribute-name.namespace.xml"
+						},
+						"2": {
+							"name": "entity.other.attribute-name.xml"
+						},
+						"3": {
+							"name": "punctuation.separator.namespace.xml"
+						},
+						"4": {
+							"name": "entity.other.attribute-name.localname.xml"
+						}
+					}
+				},
+				{
+					"include": "#doublequotedString"
+				},
+				{
+					"include": "#singlequotedString"
+				}
+			]
+		},
+		{
 			"include": "text.xml"
 		}
 		
