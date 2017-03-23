@@ -30,39 +30,23 @@
 			"contentName": "meta.tag.xml.xsl",
 			"patterns": [
 				{
-					"begin": "(as)\\s*=(\")",
+					"begin": "(as)\\s*=\"",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
-						},
-						"2": {
-							"name": "string.quoted.double.xml"
 						}
 					},
-					"end": "(\")",
-					"endCaptures": {
-						"1": {
-							"name": "string.quoted.double.xml"
-						}
-					},
+					"end": "\"",
 					"contentName": "support.type"
 				},
 				{
-					"begin": "(select|test)\\s*=(\")",
+					"begin": "(select|test)\\s*=\"",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
-						},
-						"2": {
-							"name": "string.quoted.double.xml"
 						}
 					},
-					"end": "(\")",
-					"endCaptures": {
-						"1": {
-							"name": "string.quoted.double.xml"
-						}
-					},
+					"end": "\"",
 					"patterns": [
 						{
 							"include": "source.xpath"
@@ -117,21 +101,13 @@
 			"contentName": "meta.tag.xml",
 			"patterns": [
 				{
-					"begin": "(\\w+)\\s*=(\"{)",
+					"begin": "(\\w+)\\s*=\"{",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
-						},
-						"2": {
-							"name": "string.quoted.double.xml"
 						}
 					},
-					"end": "(}\")",
-					"endCaptures": {
-						"1": {
-							"name": "string.quoted.double.xml"
-						}
-					},
+					"end": "}\"",
 					"patterns": [{ "include": "source.xpath" }]
 				},
 				{
