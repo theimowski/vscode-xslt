@@ -7,7 +7,7 @@
 	],
 	"patterns": [
 		{
-			"begin": "(<)(xsl)((:))(variable)",
+			"begin": "(<)(xsl)((:))([\\w-]+)",
 			"captures": {
 				"1": {
 					"name": "punctuation.definition.tag.xml"
@@ -27,7 +27,7 @@
 			},
 			"end": "(>)",
 			
-			"contentName": "meta.tag.xml.variable",
+			"contentName": "meta.tag.xml.xsl",
 			"patterns": [
 				{
 					"begin": "(as)=(\")",
