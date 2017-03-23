@@ -7,11 +7,20 @@
             "name": "keyword.control"
 		},
         {
-            "include": "#singlequotedString"
+            "include": "#string-literals"
+        },
+        {
+            "include": "#numeric-constants"
+        },
+        {
+            "include": "#variable-references"
+        },
+        {
+            "include": "#function-calls"
         }
 	],
     "repository": {
-		"singlequotedString": {
+		"string-literals": {
 			"begin": "'",
 			"beginCaptures": {
 				"0": {
@@ -25,6 +34,22 @@
 				}
 			},
 			"name": "string.quoted.single.xml"
-		}
+		},
+        "numeric-constants": {
+            "name": "constant.numeric.decimal.xpath",
+            "match": "\\b(-)?([0-9_]+)?(\\.)?[0-9_]+((e|E)[0-9]+)?\\b"
+		},
+        "variable-references": {
+            "name": "variable.other.xpath",
+            "match": "\\$\\w+"
+        },
+        "function-calls": {
+            "name": "entity.name.function.xpath",
+            "begin": "(\\w+:)?[\\w-]+\\(",
+            "end": "\\)",
+            "patterns": [{ "include": "source.xpath" }]
+        }
+
+        
 	}
 }
