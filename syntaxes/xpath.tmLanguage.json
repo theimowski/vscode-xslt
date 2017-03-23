@@ -19,6 +19,9 @@
         },
         {
             "include": "#function-calls"
+        },
+        {
+            "include": "#axis-steps"
         }
 	],
     "repository": {
@@ -62,8 +65,10 @@
             },
             "end": "\\)",
             "patterns": [{ "include": "source.xpath" }]
+        },
+        "axis-steps": {
+            "match": "(([\\w-]+::|@)?(\\w+|\\*)|\\.\\.)",
+            "name": "variable.othe.xpath.axis"
         }
-
-
 	}
 }
