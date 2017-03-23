@@ -62,7 +62,12 @@
 						"1": {
 							"name": "string.quoted.double.xml"
 						}
-					}
+					},
+					"patterns": [
+						{
+							"include": "source.css"
+						}
+					]
 				},
 				{
 					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as|select)([a-zA-Z-]+)",
