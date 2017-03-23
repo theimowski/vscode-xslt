@@ -65,7 +65,7 @@
 					},
 					"patterns": [
 						{
-							"include": "source.css"
+							"include": "source.xpath"
 						}
 					]
 				},

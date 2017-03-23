@@ -14,10 +14,30 @@
         "xml"
     ],
     "contributes": {
-        "grammars": [{
-            "language": "xsl",
-            "scopeName": "text.xml.xsl",
-            "path": "./syntaxes/xslt.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "xpath",
+                "aliases": [
+                    "XPath",
+                    "xpath"
+                ],
+                "configuration": "./xpath-language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "xsl",
+                "scopeName": "text.xml.xsl",
+                "path": "./syntaxes/xslt.tmLanguage.json",
+                "embeddedLanguages": {
+                    "source.xpath": "xpath"
+                }
+            },
+            {
+                "language": "xpath",
+                "scopeName": "source.xpath",
+                "path": "./syntaxes/xpath.tmLanguage.json"
+            }
+        ]
     }
 }

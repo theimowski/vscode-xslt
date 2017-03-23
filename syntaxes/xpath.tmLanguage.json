@@ -1,0 +1,10 @@
+{
+	"scopeName": "source.xpath",
+	"name": "xpath",
+	"patterns": [
+		{
+			"match": "\\b(if|then|else)\\b",
+            "name": "keyword.control"
+		}
+	]
+}
