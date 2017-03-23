@@ -44,12 +44,16 @@
             "match": "\\$\\w+"
         },
         "function-calls": {
-            "name": "entity.name.function.xpath",
-            "begin": "(\\w+:)?[\\w-]+\\(",
+            "begin": "((?:\\w+:)?[\\w-]+)\\(",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.xpath"
+                }
+            },
             "end": "\\)",
             "patterns": [{ "include": "source.xpath" }]
         }
 
-        
+
 	}
 }
