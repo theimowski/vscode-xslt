@@ -48,7 +48,25 @@
 					"contentName": "support.type"
 				},
 				{
-					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as)([a-zA-Z-]+)",
+					"begin": "(select)=(\")",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.other.attribute-name.localname.xml"
+						},
+						"2": {
+							"name": "string.quoted.double.xml"
+						}
+					},
+					"end": "(\")",
+					"endCaptures": {
+						"1": {
+							"name": "string.quoted.double.xml"
+						}
+					},
+					"contentName": "keyword.control"
+				},
+				{
+					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as|select)([a-zA-Z-]+)",
 					"captures": {
 						"1": {
 							"name": "entity.other.attribute-name.namespace.xml"
