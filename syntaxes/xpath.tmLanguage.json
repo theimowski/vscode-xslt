@@ -30,7 +30,7 @@
             "name": "keyword.control"
         },
         "operators": {
-			"match": "(\\[|\\]|\\||\/|//|-|\\*|\\+|=|!=|<|<=|>|>=)",
+			"match": "(\\[|\\]|\\||\/|//|-|\\*|\\+|=|!=|<|<=|>|>=|&lt;|&gt;)",
             "name": "keyword.control"
         },
 		"string-literals": {

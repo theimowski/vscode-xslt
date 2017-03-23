@@ -40,7 +40,7 @@
 					"contentName": "support.type"
 				},
 				{
-					"begin": "(select|test)\\s*=\"",
+					"begin": "(select|test|match)\\s*=\"",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
@@ -54,7 +54,7 @@
 					]
 				},
 				{
-					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as|select|test)([a-zA-Z-]+)",
+					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as|select|test|match)([a-zA-Z-]+)",
 					"captures": {
 						"1": {
 							"name": "entity.other.attribute-name.namespace.xml"
