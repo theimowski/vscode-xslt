@@ -5,6 +5,26 @@
 		{
 			"match": "\\b(if|then|else)\\b",
             "name": "keyword.control"
+		},
+        {
+            "include": "#singlequotedString"
+        }
+	],
+    "repository": {
+		"singlequotedString": {
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.xml"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.xml"
+				}
+			},
+			"name": "string.quoted.single.xml"
 		}
-	]
+	}
 }
