@@ -30,7 +30,7 @@
 			"contentName": "meta.tag.xml.xsl",
 			"patterns": [
 				{
-					"begin": "(as)=(\")",
+					"begin": "(as)\\s*=(\")",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
@@ -48,7 +48,7 @@
 					"contentName": "support.type"
 				},
 				{
-					"begin": "(select)=(\")",
+					"begin": "(select)\\s*=(\")",
 					"beginCaptures": {
 						"1": {
 							"name": "entity.other.attribute-name.localname.xml"
@@ -62,8 +62,7 @@
 						"1": {
 							"name": "string.quoted.double.xml"
 						}
-					},
-					"contentName": "keyword.control"
+					}
 				},
 				{
 					"match": " (?:([-_a-zA-Z0-9]+)((:)))?(?!as|select)([a-zA-Z-]+)",
