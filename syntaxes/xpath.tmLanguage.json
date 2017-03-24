@@ -26,7 +26,7 @@
 	],
     "repository": {
         "keywords": {
-			"match": "\\b(except|intersect|union|div|idiv|mod|to|is|isnot|eq|ne|lt|le|gt|ge|cast as|castable as|treat as|instance of|and|or|if|then|else|some|every|for|return)\\b",
+			"match": "\\b(except|intersect|union|div|idiv|mod|to|is|isnot|eq|ne|lt|le|gt|ge|cast as|castable as|treat as|instance of|and|or|if|then|else|some|every|in|for|return)\\b",
             "name": "keyword.control"
         },
         "operators": {
